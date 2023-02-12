@@ -46,7 +46,7 @@ return require("packer").startup(function(use)
   -- Packer can manage itself
   use({ "wbthomason/packer.nvim" })
   use({ "nvim-lua/popup.nvim" }) -- An implementation of the Popup API from vim in Neovim
-  use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used ny lots of plugins
+  use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 
   use({ "ethanholz/nvim-lastplace" })
 

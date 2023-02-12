@@ -1,6 +1,6 @@
 require("core.settings")
 require("core.keymaps")
 
---require("configs.theme.kanagawa")
+require("configs.themes.kanagawa")
 
---require("core.plugins")
+require("core.plugins")
