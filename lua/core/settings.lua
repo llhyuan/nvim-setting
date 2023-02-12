@@ -31,7 +31,7 @@ vim.opt.smartindent = true
 vim.opt.list = true
 vim.opt.listchars = {
 	tab = "▸ ",
-	trail = "▫",
+	trail = "+",
 }
 
 vim.opt.mouse = "a"
@@ -41,7 +41,7 @@ vim.opt.encoding = "utf-8"
 -- vim.opt.guifont = 'Fira_Code_Font'
 vim.opt.autowrite = true
 vim.opt.formatoptions = ""
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 5
 vim.opt.tw = 0
 vim.opt.backspace = "indent,eol,start"
 vim.opt.foldmethod = "indent"

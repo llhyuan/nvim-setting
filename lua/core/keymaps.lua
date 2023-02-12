@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader><cr>", ":nohlsearch<cr>", opts)
 
 -- quick esc
 --vim.keymap.set("n", "<c-u>", ":w<enter>", opts)
-vim.keymap.set("i", "jk", "<esc>", opts)
+vim.keymap.set("i", "jj", "<esc>", opts)
 
 -- quick movement
 vim.keymap.set("n", "J", "5j", opts)
@@ -18,7 +18,7 @@ vim.keymap.set("n", "K", "5k", opts)
 vim.keymap.set("n", "H", "0", opts)
 vim.keymap.set("n", "L", "$", opts)
 
-vim.keymap.set("n", ";", ":")
+--vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "Q", ":q!<enter>", opts)
 vim.keymap.set("v", "Y", '"+y', opts)
 vim.keymap.set("n", "<", "<<", opts)
@@ -33,11 +33,11 @@ vim.keymap.set("n", "<leader>sw", ":set wrap!<cr>", opts)
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 -- Move text up and down
-vim.keymap.set("n", "<A-down>", ":m .+1<CR>==", opts)
-vim.keymap.set("n", "<A-up>", ":m .-2<CR>==", opts)
-vim.keymap.set("v", "<A-down>", ":m '>+1<CR>gv=gv", opts)
-vim.keymap.set("v", "<A-up>", ":m '<-2<CR>gv=gv", opts)
--- replace what you highlight
+vim.keymap.set("n", "∆", ":m .+1<CR>==", opts)
+vim.keymap.set("n", "˚", ":m .-2<CR>==", opts)
+vim.keymap.set("v", "∆", ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set("v", "˚", ":m '<-2<CR>gv=gv", opts)
+-- replace the highlighted text with content from clip board.
 vim.keymap.set("v", "p", '"_dP', opts)
 
 -- split screen
