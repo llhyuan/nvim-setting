@@ -5,6 +5,35 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>rc", ":e ~/.config/nvim/init.vim <cr>", opts)
 
 vim.keymap.set("n", "=", "nzz", opts)
+--vim.keymap.set("n", "<CAPS>", "<esc>", opts)
+vim.keymap.set("n", "-", "Nzz", opts)
+vim.keymap.set("n", "<leader><cr>", ":nohlsearch<cr>", opts)
+
+-- quick esc
+--vim.keymap.set("n", "<c-u>", ":w<enter>", opts)
+vim.keymap.set("i", "jj", "<esc>", opts)
+
+-- quick movement
+vim.keymap.set("n", "J", "5j", opts)
+vim.keymap.set("n", "K", "5k", opts)
+vim.keymap.set("n", "H", "0", opts)
+vim.keymap.set("n", "L", "$", opts)
+
+vim.keymap.set("n", ";", ":")
+vim.keymap.set("n", "Q", ":q!<enter>", opts)
+vim.keymap.set("v", "Y", '"+y', opts)
+vim.keymap.set("n", "<", "<<", opts)
+vim.keymap.set("n", ">", ">>", opts)
+vim.keymap.set("n", "<leader>o", "za", opts)
+
+vim.keymap.set("n", "<leader><leader>", "<Esc>/<++><CR>:nohlsearch<CR>4xi", opts)
+vim.keymap.set("n", "<leader>sc", ":set spell!<cr>", opts)
+vim.keymap.set("n", "<leader>sw", ":set wrap!<cr>", opts)
+
+-- Stay in indent mode when you indent code
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
+-- Move text up and down
 vim.keymap.set("n", "-", "Nzz", opts)
 vim.keymap.set("n", "<leader><cr>", ":nohlsearch<cr>", opts)
 
@@ -60,10 +89,10 @@ vim.keymap.set("n", "srh", "<C-w>b<C-w>K", opts)
 vim.keymap.set("n", "srv", "<C-w>b<C-w>H", opts)
 
 -- adjust window size
-vim.keymap.set("n", "<up>", ":res +5<cr>", opts)
-vim.keymap.set("n", "<down>", ":res -5<cr>", opts)
-vim.keymap.set("n", "<left>", ":vertical resize+5<cr>", opts)
-vim.keymap.set("n", "<right>", ":vertical resize-5<cr>", opts)
+vim.keymap.set("n", "<up>", ":res +3<cr>", opts)
+vim.keymap.set("n", "<down>", ":res -3<cr>", opts)
+vim.keymap.set("n", "<right>", ":vertical resize -3<cr>", opts)
+vim.keymap.set("n", "<left>", ":vertical resize +3<cr>", opts)
 
 -- tab management
 vim.keymap.set("n", "ti", ":tabe<cr>", opts)
@@ -78,12 +107,22 @@ vim.keymap.set("n", "bh", ":bp<cr>", opts)
 vim.keymap.set("n", "bl", ":bn<cr>", opts)
 
 -- quickfix and location fix
-vim.keymap.set("n", "co", ":copen<cr>", opts)
-vim.keymap.set("n", "cj", ":cnext<cr>", opts)
-vim.keymap.set("n", "ck", ":cprevious<cr>", opts)
-vim.keymap.set("n", "cc", ":cclose<cr>", opts)
+vim.keymap.set("n", "qo", ":copen<cr>", opts)
+vim.keymap.set("n", "qj", ":cnext<cr>", opts)
+vim.keymap.set("n", "qk", ":cprevious<cr>", opts)
+vim.keymap.set("n", "qc", ":cclose<cr>", opts)
 
 vim.keymap.set("n", "zo", ":lopen<cr>", opts)
 vim.keymap.set("n", "zj", ":lnext<cr>", opts)
 vim.keymap.set("n", "zk", ":lprevious<cr>", opts)
 vim.keymap.set("n", "zc", ":lclose<cr>", opts)
+
+-- telescope --
+-- keymap("n", "<leader>F", "<cmd>Telescope find_files<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>F", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", opts)
+
+
+-- formatting --
+
+vim.keymap.set("n", "<leader>f", ":Format<cr>", opts)
