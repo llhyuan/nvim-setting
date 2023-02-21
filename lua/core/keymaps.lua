@@ -50,6 +50,10 @@ vim.keymap.set("n", "˚", ":m .-2<CR>==", opts)
 vim.keymap.set("v", "∆", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "˚", ":m '<-2<CR>gv=gv", opts)
 -- replace the highlighted text with content from clip board.
+vim.keymap.set("n", "d", '"zd', opts)
+vim.keymap.set("v", "d", '"zd', opts)
+vim.keymap.set("n", "x", '"zx', opts)
+vim.keymap.set("v", "x", '"zx', opts)
 vim.keymap.set("v", "p", '"_dP', opts)
 vim.keymap.set("x", "<leader>p", '\"_dp', opts) -- paste without replacing the content in current register.
 -- split screen
@@ -84,7 +88,8 @@ vim.keymap.set("n", "tl", ":+tabnext<cr>", opts)
 -- move tabs
 vim.keymap.set("n", "tmh", ":-tabmove<cr>", opts)
 vim.keymap.set("n", "tml", ":+tabmove<cr>", opts)
-
+-- open terminal 
+vim.keymap.set("n", "<leader>t", ":ToggleTerm<cr>", opts)
 -- buffer switcher
 vim.keymap.set("n", "bh", ":bp<cr>", opts)
 vim.keymap.set("n", "bl", ":bn<cr>", opts)

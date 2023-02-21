@@ -32,7 +32,8 @@ local servers = {
   "tsserver",
   "marksman",
   "sqlls",
-  "svelte"
+  "svelte",
+  "emmet_ls"
 }
 
 local settings = {

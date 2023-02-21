@@ -19,6 +19,9 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.showmatch = true
 
+-- terminal
+vim.opt_global.shell = '/bin/zsh'
+
 -- tabs
 vim.opt.autoindent = true
 vim.opt.tabstop = 2
@@ -110,3 +113,5 @@ au("TextYankPost", {
 --     command = "%s/\%$/\r/e"
 --   }
 -- )
+---------emmet for html---------
+--vim.cmd("EmmetInstall")

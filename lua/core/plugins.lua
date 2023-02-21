@@ -124,6 +124,7 @@ return require("packer").startup(function(use)
   use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets source for nvim-cmp
   use({ "L3MON4D3/LuaSnip" }) -- Snippets plugin
   use({ "rafamadriz/friendly-snippets" })
+  use({ "mattn/emmet-vim" })
   -- use({ "ray-x/cmp-treesitter" })
   -- use({ "onsails/lspkind.nvim" })
   ----------------------------------- formatter --------------------------
@@ -141,7 +142,7 @@ return require("packer").startup(function(use)
   -- use({ "lewis6991/gitsigns.nvim" })
 
   -- toggle term
-  -- use({ "akinsho/toggleterm.nvim", tag = "*" })
+  use({ "akinsho/toggleterm.nvim", tag = "*" })
 
 
   -- markdown
