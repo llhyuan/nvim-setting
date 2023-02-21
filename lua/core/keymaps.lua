@@ -4,60 +4,43 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>rc", ":e ~/.config/nvim/init.vim <cr>", opts)
 
-vim.keymap.set("n", "=", "nzz", opts)
---vim.keymap.set("n", "<CAPS>", "<esc>", opts)
-vim.keymap.set("n", "-", "Nzz", opts)
-vim.keymap.set("n", "<leader><cr>", ":nohlsearch<cr>", opts)
+-- select all
+vim.keymap.set("n", "å", "gg<S-v>G", opts) -- next search result
 
--- quick esc
---vim.keymap.set("n", "<c-u>", ":w<enter>", opts)
+-- increase/decrease number
+vim.keymap.set("n", "=", "<C-a>", opts) -- next search result
+vim.keymap.set("n", "-", "<C-x>", opts) -- next search result
+
+-- fuzzy search with
+vim.keymap.set("n", "+", "nzz", opts) -- next search result
+vim.keymap.set("n", "_", "Nzz", opts) -- prev search result 
+vim.keymap.set("n", "<leader><cr>", ":nohlsearch<cr>", opts) -- cancel search 
+
+vim.keymap.set("n", ";", ":", opts)
 vim.keymap.set("i", "jj", "<esc>", opts)
 
 -- quick movement
+vim.keymap.set("n", "j", "gj", opts)
+vim.keymap.set("v", "j", "gj", opts)
 vim.keymap.set("n", "J", "5j", opts)
+vim.keymap.set("n", "k", "gk", opts)
+vim.keymap.set("v", "k", "gk", opts)
 vim.keymap.set("n", "K", "5k", opts)
-vim.keymap.set("n", "H", "0", opts)
-vim.keymap.set("n", "L", "$", opts)
-
-vim.keymap.set("n", ";", ":")
-vim.keymap.set("n", "Q", ":q!<enter>", opts)
-vim.keymap.set("v", "Y", '"+y', opts)
-vim.keymap.set("n", "<", "<<", opts)
-vim.keymap.set("n", ">", ">>", opts)
-vim.keymap.set("n", "<leader>o", "za", opts)
-
-vim.keymap.set("n", "<leader><leader>", "<Esc>/<++><CR>:nohlsearch<CR>4xi", opts)
-vim.keymap.set("n", "<leader>sc", ":set spell!<cr>", opts)
-vim.keymap.set("n", "<leader>sw", ":set wrap!<cr>", opts)
-
--- Stay in indent mode when you indent code
-vim.keymap.set("v", "<", "<gv", opts)
-vim.keymap.set("v", ">", ">gv", opts)
--- Move text up and down
-vim.keymap.set("n", "-", "Nzz", opts)
-vim.keymap.set("n", "<leader><cr>", ":nohlsearch<cr>", opts)
-
--- quick esc
---vim.keymap.set("n", "<c-u>", ":w<enter>", opts)
-vim.keymap.set("i", "jj", "<esc>", opts)
-
--- quick movement
-vim.keymap.set("n", "J", "5j", opts)
-vim.keymap.set("n", "K", "5k", opts)
-vim.keymap.set("n", "H", "0", opts)
-vim.keymap.set("n", "L", "$", opts)
+vim.keymap.set("n", "H", "g^", opts)
+vim.keymap.set("v", "H", "g^", opts)
+vim.keymap.set("n", "L", "g$", opts)
+vim.keymap.set("v", "L", "g$", opts)
 
 --vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "Q", ":q!<enter>", opts)
 vim.keymap.set("v", "Y", '"+y', opts)
 vim.keymap.set("n", "<", "<<", opts)
 vim.keymap.set("n", ">", ">>", opts)
-vim.keymap.set("n", "<leader>o", "za", opts)
+--vim.keymap.set("n", "<leader>o", "za", opts)
 
 vim.keymap.set("n", "<leader><leader>", "<Esc>/<++><CR>:nohlsearch<CR>4xi", opts)
 vim.keymap.set("n", "<leader>sc", ":set spell!<cr>", opts)
 vim.keymap.set("n", "<leader>sw", ":set wrap!<cr>", opts)
-
 -- Stay in indent mode when you indent code
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
@@ -68,7 +51,7 @@ vim.keymap.set("v", "∆", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "˚", ":m '<-2<CR>gv=gv", opts)
 -- replace the highlighted text with content from clip board.
 vim.keymap.set("v", "p", '"_dP', opts)
-
+vim.keymap.set("x", "<leader>p", '\"_dp', opts) -- paste without replacing the content in current register.
 -- split screen
 vim.keymap.set("n", "sk", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", opts)
 vim.keymap.set("n", "sj", ":set splitbelow<CR>:split<CR>", opts)
@@ -118,9 +101,10 @@ vim.keymap.set("n", "zk", ":lprevious<cr>", opts)
 vim.keymap.set("n", "zc", ":lclose<cr>", opts)
 
 -- telescope --
--- keymap("n", "<leader>F", "<cmd>Telescope find_files<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>F", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", opts)
+vim.keymap.set("n", "<leader>F", "<cmd>Telescope find_files<cr>", opts)
+--vim.api.nvim_set_keymap("n", "<leader>F", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+vim.keymap.set("n", "<leader>G", "<cmd>Telescope live_grep<cr>", opts)
+vim.keymap.set("n", "<leader>E", "<cmd>Telescope file_browser<cr>", opts)
 
 
 -- formatting --

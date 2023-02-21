@@ -1,13 +1,13 @@
 local configs = require("nvim-treesitter.configs")
 
 configs.setup {
-  ensure_installed = {"c", "python", "javascript", "typescript", "html", "scss", "help", "lua"},
-  sync_install = false, 
---  ignore_install = { "" }, -- List of parsers to ignore installing
+  ensure_installed = { "c", "python", "javascript", "typescript", "html", "scss", "help", "lua" },
+  sync_install = false,
+  --  ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension
---    disable = { "" }, -- list of language that will be disabled
---    additional_vim_regex_highlighting = true,
+    --    disable = { "" }, -- list of language that will be disabled
+    --    additional_vim_regex_highlighting = true,
 
   },
   rainbow = {
@@ -29,6 +29,12 @@ configs.setup {
   },
   context_commentstring = {
     enable = true,
-    enable_autocmd = false,
+    -- enable_autocmd = false,
+    config = {
+      lua = { __default = '-- %s', __multiline = '--[[ %s --]]' }
+    }
+  },
+  autotag = {
+    enable = true,
   }
 }

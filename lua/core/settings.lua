@@ -5,7 +5,7 @@ vim.cmd("nohlsearch")
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.shiftround = true
-vim.opt.updatetime = 100
+vim.opt.updatetime = 50
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 if vim.fn.has("termguicolors") == 1 then

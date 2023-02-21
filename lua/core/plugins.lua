@@ -44,80 +44,90 @@ packer.init({
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
-  
   --From here, you can manage all the plugins
-  use({ "wbthomason/packer.nvim" })  --Auto upgrade packer
+  use({ "wbthomason/packer.nvim" }) --Auto upgrade packer
   use({ "nvim-lua/popup.nvim" }) -- An implementation of the Popup API from vim in Neovim
   use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 
   use({ "ethanholz/nvim-lastplace" })
 
   use({ "nvim-lualine/lualine.nvim" })
-  use({ "akinsho/bufferline.nvim" })
+  use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' })
 
- -- use({ "kyazdani42/nvim-web-devicons" })
 
   use {
-  'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    }
+    --tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
-  --tag = 'nightly' -- optional, updated every week. (see issue #1193)
-}
 
-  -- use({ "lukas-reineke/indent-blankline.nvim" })
+  use({ "lukas-reineke/indent-blankline.nvim" })
 
   ------------------------------ commmenter ----------------------------
-  use({ "numToStr/Comment.nvim" })
+ use({ "numToStr/Comment.nvim" })
   use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+--use({ "tpope/vim-commentary" })
 
 
-  -- use({ "BurntSushi/ripgrep" }) --requires
 
   -------------------------------treesitter--------------------------------
-   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-   -- use the following command when installing for the first time 
---  use {
---          'nvim-treesitter/nvim-treesitter',
---          run = function()
---              local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
---              ts_update()
---          end,
---      }
+  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  -- use the following command when installing for the first time
+  --  use {
+  --          'nvim-treesitter/nvim-treesitter',
+  --          run = function()
+  --              local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+  --              ts_update()
+  --          end,
+  --      }
 
 
   use({ "p00f/nvim-ts-rainbow" })
   use({ "jiangmiao/auto-pairs" })
+  use({ "windwp/nvim-ts-autotag" })
+  use({ "MunifTanjim/eslint.nvim" })
 
--------------------------------telescope---------------------------------
-   use({ "nvim-telescope/telescope.nvim" })
-   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  -------------------------------telescope---------------------------------
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  })
+  use({ "BurntSushi/ripgrep" }) --required for live grep to work, should be installed using brew install.
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   -- use({ "phaazon/hop.nvim", branch = "v2" }) --rv2' optional but strongly recommended
 
-  -- use({ "NvChad/nvim-colorizer.lua" })
+  use({ "sharkdp/fd" })--required for live grep to work, should be installed using brew install. 
+  use({ "norcalli/nvim-colorizer.lua" })
+  use({ "nvim-telescope/telescope-file-browser.nvim" })
 
 
-------------------------------- lsp-----------------------------------
-   use({ "williamboman/mason.nvim" })
-   use({ "williamboman/mason-lspconfig.nvim" })
-   use({ "neovim/nvim-lspconfig" })
-   use({ "jose-elias-alvarez/null-ls.nvim" })
+  ------------------------------- lsp-----------------------------------
+  use({ "williamboman/mason.nvim" })
+  use({ "williamboman/mason-lspconfig.nvim" })
+  use({ "jay-babu/mason-null-ls.nvim" })
+  use({ "neovim/nvim-lspconfig" })
+  use({ "jose-elias-alvarez/null-ls.nvim" })
 
   --------------------------cmp------------------------------
-   use({ "hrsh7th/nvim-cmp" }) -- Autocompletion plugin
-   use({ "hrsh7th/cmp-nvim-lsp" }) -- LSP source for nvim-cmp
-   use({ "hrsh7th/cmp-buffer" })
-   use({ "hrsh7th/cmp-path" })
-   use({ "hrsh7th/cmp-cmdline" })
-   use({ "hrsh7th/cmp-nvim-lua" })
-   use({ "f3fora/cmp-spell" })
-   use({ "hrsh7th/cmp-calc" })
+  use({ "hrsh7th/nvim-cmp" }) -- Autocompletion plugin
+  use({ "hrsh7th/cmp-nvim-lsp" }) -- LSP source for nvim-cmp
+  use({ "hrsh7th/cmp-buffer" })
+  use({ "hrsh7th/cmp-path" })
+  use({ "hrsh7th/cmp-cmdline" })
+  use({ "hrsh7th/cmp-nvim-lua" })
+  use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
+  use({ "f3fora/cmp-spell" })
+  use({ "hrsh7th/cmp-calc" })
   ------------------- snippets required for cmp-------------------------
-   use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets source for nvim-cmp
-   use({ "L3MON4D3/LuaSnip" }) -- Snippets plugin
-   use({ "rafamadriz/friendly-snippets" })
+  use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets source for nvim-cmp
+  use({ "L3MON4D3/LuaSnip" }) -- Snippets plugin
+  use({ "rafamadriz/friendly-snippets" })
   -- use({ "ray-x/cmp-treesitter" })
   -- use({ "onsails/lspkind.nvim" })
+  ----------------------------------- formatter --------------------------
+  use({ "MunifTanjim/prettier.nvim" })
 
   -- languages
   -- use({ "mfussenegger/nvim-dap" })
@@ -133,7 +143,6 @@ return require("packer").startup(function(use)
   -- toggle term
   -- use({ "akinsho/toggleterm.nvim", tag = "*" })
 
-  -- use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
   -- markdown
   -- use({ "godlygeek/tabular", ft = { "markdown" } }) -- requires
@@ -160,14 +169,10 @@ return require("packer").startup(function(use)
   use({
     "sainnhe/gruvbox-material",
     "ellisonleao/gruvbox.nvim",
-    "joshdick/onedark.vim",
-    "Rigellute/shades-of-purple.vim",
-    "rebelot/kanagawa.nvim",
-    "sainnhe/everforest",
     "catppuccin/nvim",
-    "lunarvim/colorschemes",
     "arcticicestudio/nord-vim",
-    "dracula/vim"
+    "dracula/vim",
+    "EdenEast/nightfox.nvim"
   })
 
   -- UI
