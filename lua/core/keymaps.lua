@@ -110,6 +110,7 @@ vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 --vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 vim.keymap.set("n", "<leader>G", "<cmd>Telescope live_grep<cr>", opts)
 vim.keymap.set("n", "<leader>E", "<cmd>Telescope file_browser<cr>", opts)
+vim.keymap.set("n", "<leader>m", "<cmd>Telescope media_files<cr>", opts)
 
 
 -- formatting --

@@ -120,6 +120,14 @@ telescope.setup {
         },
       },
     },
+    media_files = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = { "svg", "png", "webp", "jpg", "jpeg" },
+      -- find command (defaults to `fd`)
+      find_cmd = "rg"
+    }
   } }
 require('telescope').load_extension('fzf')
 require("telescope").load_extension("file_browser")
+require("telescope").load_extension("media_files")

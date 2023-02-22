@@ -101,6 +101,8 @@ return require("packer").startup(function(use)
   use({ "sharkdp/fd" }) --required for live grep to work, should be installed using brew install.
   use({ "norcalli/nvim-colorizer.lua" })
   use({ "nvim-telescope/telescope-file-browser.nvim" })
+  use({ "nvim-telescope/telescope-media-files.nvim" })
+  --use({ "nvim-telescope/telescope-file-browser.nvim" })
 
 
   ------------------------------- lsp-----------------------------------
