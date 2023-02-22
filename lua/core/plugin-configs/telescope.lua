@@ -126,8 +126,17 @@ telescope.setup {
       filetypes = { "svg", "png", "webp", "jpg", "jpeg" },
       -- find command (defaults to `fd`)
       find_cmd = "rg"
+    },
+    project = {
+      base_dirs = {
+        '~/Documents/GitHub' },
+      hidden_files = true, -- default: false
+      order_by = "asc",
+      search_by = "title",
+      sync_with_nvim_tree = true, -- default false
     }
   } }
 require('telescope').load_extension('fzf')
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("media_files")
+require("telescope").load_extension("project")
