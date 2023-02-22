@@ -66,9 +66,9 @@ return require("packer").startup(function(use)
   use({ "lukas-reineke/indent-blankline.nvim" })
 
   ------------------------------ commmenter ----------------------------
- use({ "numToStr/Comment.nvim" })
+  use({ "numToStr/Comment.nvim" })
   use({ "JoosepAlviste/nvim-ts-context-commentstring" })
---use({ "tpope/vim-commentary" })
+  --use({ "tpope/vim-commentary" })
 
 
 
@@ -98,7 +98,7 @@ return require("packer").startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   -- use({ "phaazon/hop.nvim", branch = "v2" }) --rv2' optional but strongly recommended
 
-  use({ "sharkdp/fd" })--required for live grep to work, should be installed using brew install. 
+  use({ "sharkdp/fd" }) --required for live grep to work, should be installed using brew install.
   use({ "norcalli/nvim-colorizer.lua" })
   use({ "nvim-telescope/telescope-file-browser.nvim" })
 
@@ -175,6 +175,8 @@ return require("packer").startup(function(use)
     "dracula/vim",
     "EdenEast/nightfox.nvim"
   })
+
+  ---------------------------------------dashboard----------------------------
 
   -- UI
   -- use({ "goolord/alpha-nvim" })
