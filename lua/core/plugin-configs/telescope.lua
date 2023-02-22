@@ -104,7 +104,7 @@ telescope.setup {
           -- your custom insert mode mappings
         },
         ["n"] = {
-          ["c"] = fb_actions.create,
+          ["a"] = fb_actions.create,
           ["r"] = fb_actions.rename,
           ["m"] = fb_actions.move,
           ["y"] = fb_actions.copy,

@@ -6,6 +6,10 @@ vim.keymap.set("n", "<leader>rc", ":e ~/.config/nvim/init.vim <cr>", opts)
 
 -- select all
 vim.keymap.set("n", "å", "gg<S-v>G", opts) -- next search result
+-- save changes 
+vim.keymap.set("n", "ß", ":w<cr>", opts) -- next search result
+vim.keymap.set("n", "∑", ":wq<cr>", opts) -- next search result
+vim.keymap.set("n", "œ", ":q!<cr>", opts) -- next search result
 
 -- increase/decrease number
 vim.keymap.set("n", "=", "<C-a>", opts) -- next search result

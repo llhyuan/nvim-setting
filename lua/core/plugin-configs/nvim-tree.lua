@@ -7,6 +7,14 @@ vim.opt.termguicolors = true
 
 -- empty setup using defaults
 require("nvim-tree").setup({
+  view = {
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+        { key = "W", action = "collapse_all" },
+      },
+    },
+  },
   git = {
         enable = true,
         ignore = true,
