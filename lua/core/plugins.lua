@@ -82,7 +82,11 @@ return require("packer").startup(function(use)
   --              ts_update()
   --          end,
   --      }
-
+  use({
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter",
+    requires = "nvim-treesitter/nvim-treesitter",
+  })
 
   use({ "p00f/nvim-ts-rainbow" })
   use({ "jiangmiao/auto-pairs" })
@@ -131,6 +135,10 @@ return require("packer").startup(function(use)
   -- use({ "onsails/lspkind.nvim" })
   ----------------------------------- formatter --------------------------
   use({ "MunifTanjim/prettier.nvim" })
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+  })
 
   -- languages
   -- use({ "mfussenegger/nvim-dap" })
