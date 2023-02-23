@@ -186,6 +186,11 @@ return require("packer").startup(function(use)
     "EdenEast/nightfox.nvim"
   })
 
+  ---------------------------------------session------------------------------
+
+   use({ "tpope/vim-obsession" })
+
+
   ---------------------------------------dashboard----------------------------
 
   -- UI

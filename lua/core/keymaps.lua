@@ -117,7 +117,6 @@ vim.keymap.set("n", "<leader>E", "<cmd>Telescope file_browser<cr>", opts)
 vim.keymap.set("n", "<leader>m", "<cmd>Telescope media_files<cr>", opts)
 vim.keymap.set("n", "<leader>p", "<cmd>Telescope project<cr>", opts)
 
-
 -- formatting --
 
 vim.keymap.set("n", "<leader>F", ":Format<cr>", opts)
