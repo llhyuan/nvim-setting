@@ -118,5 +118,7 @@ vim.keymap.set("n", "<leader>m", "<cmd>Telescope media_files<cr>", opts)
 vim.keymap.set("n", "<leader>p", "<cmd>Telescope project<cr>", opts)
 
 -- formatting --
-
 vim.keymap.set("n", "<leader>F", ":Format<cr>", opts)
+
+-- Renaming variables 
+vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
