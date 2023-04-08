@@ -124,3 +124,5 @@ vim.keymap.set("n", "<leader>F", ":Format<cr>", opts)
 
 -- Renaming variables
 vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+
+

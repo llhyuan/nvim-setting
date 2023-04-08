@@ -92,6 +92,8 @@ return require("packer").startup(function(use)
   use({ "jiangmiao/auto-pairs" })
   use({ "windwp/nvim-ts-autotag" })
   use({ "MunifTanjim/eslint.nvim" })
+  -- folding
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   -------------------------------telescope---------------------------------
   use({
@@ -188,7 +190,7 @@ return require("packer").startup(function(use)
 
   ---------------------------------------session------------------------------
 
-   use({ "tpope/vim-obsession" })
+  use({ "tpope/vim-obsession" })
 
 
   ---------------------------------------dashboard----------------------------
@@ -208,11 +210,4 @@ return require("packer").startup(function(use)
   ------------------------------------------- Golang ----------------------------
 
   use({ "fatih/vim-go" })
-
-
-
-
-
-
 end)
-
