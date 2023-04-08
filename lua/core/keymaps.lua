@@ -6,19 +6,19 @@ vim.keymap.set("n", "<leader>rc", ":e ~/.config/nvim/init.vim <cr>", opts)
 
 -- select all
 vim.keymap.set("n", "å", "gg<S-v>G", opts) -- next search result
--- save changes 
-vim.keymap.set("n", "ß", ":w<cr>", opts) -- next search result
-vim.keymap.set("n", "∑", ":wq<cr>", opts) -- next search result
-vim.keymap.set("n", "œ", ":q!<cr>", opts) -- next search result
+-- save changes
+vim.keymap.set("n", "ß", ":w<cr>", opts) -- ctrl+s to save changes
+vim.keymap.set("n", "∑", ":wq<cr>", opts) -- ctrl+w to save changes and close the file
+vim.keymap.set("n", "œ", ":q!<cr>", opts) --ctrl+q to discard changes and close the file
 
 -- increase/decrease number
-vim.keymap.set("n", "=", "<C-a>", opts) -- next search result
-vim.keymap.set("n", "-", "<C-x>", opts) -- next search result
+vim.keymap.set("n", "+", "<C-a>", opts) -- increase the number under the pointer
+vim.keymap.set("n", "_", "<C-x>", opts) -- decrease the number under the pointer
 
--- fuzzy search with
-vim.keymap.set("n", "+", "nzz", opts) -- next search result
-vim.keymap.set("n", "_", "Nzz", opts) -- prev search result 
-vim.keymap.set("n", "<leader><cr>", ":nohlsearch<cr>", opts) -- cancel search 
+-- fuzzy search with /pattern
+vim.keymap.set("n", "=", "nzz", opts) -- next search result
+vim.keymap.set("n", "-", "Nzz", opts) -- prev search result
+vim.keymap.set("n", "<leader><cr>", ":nohlsearch<cr>", opts) -- cancel search
 
 vim.keymap.set("n", ";", ":", opts)
 vim.keymap.set("i", "jj", "<esc>", opts)
@@ -26,17 +26,16 @@ vim.keymap.set("i", "jj", "<esc>", opts)
 -- quick movement
 vim.keymap.set("n", "j", "gj", opts)
 vim.keymap.set("v", "j", "gj", opts)
-vim.keymap.set("n", "J", "5j", opts)
+vim.keymap.set("n", "J", "8j", opts)
 vim.keymap.set("n", "k", "gk", opts)
 vim.keymap.set("v", "k", "gk", opts)
-vim.keymap.set("n", "K", "5k", opts)
+vim.keymap.set("n", "K", "8k", opts)
 vim.keymap.set("n", "H", "g^", opts)
 vim.keymap.set("v", "H", "g^", opts)
 vim.keymap.set("n", "L", "g$", opts)
 vim.keymap.set("v", "L", "g$", opts)
 
---vim.keymap.set("n", ";", ":")
-vim.keymap.set("n", "Q", ":q!<enter>", opts)
+--vim.keymap.set("n", "Q", ":q!<enter>", opts)
 vim.keymap.set("v", "Y", '"+y', opts)
 vim.keymap.set("n", "<", "<<", opts)
 vim.keymap.set("n", ">", ">>", opts)
@@ -45,12 +44,15 @@ vim.keymap.set("n", ">", ">>", opts)
 vim.keymap.set("n", "<leader><leader>", "<Esc>/<++><CR>:nohlsearch<CR>4xi", opts)
 vim.keymap.set("n", "<leader>sc", ":set spell!<cr>", opts)
 vim.keymap.set("n", "<leader>sw", ":set wrap!<cr>", opts)
+
 -- Stay in indent mode when you indent code
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
+
 -- Move text up and down
-vim.keymap.set("n", "∆", ":m .+1<CR>==", opts)
-vim.keymap.set("n", "˚", ":m .-2<CR>==", opts)
+vim.keymap.set("n", "∆", ":m .+1<CR>==", opts) -- ctrl+j to move selected text down
+vim.keymap.set("n", "˚", ":m .-2<CR>==", opts) -- ctrl+k to move selected text up
+
 vim.keymap.set("v", "∆", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "˚", ":m '<-2<CR>gv=gv", opts)
 -- replace the highlighted text with content from clip board.
@@ -92,7 +94,7 @@ vim.keymap.set("n", "tl", ":+tabnext<cr>", opts)
 -- move tabs
 vim.keymap.set("n", "tmh", ":-tabmove<cr>", opts)
 vim.keymap.set("n", "tml", ":+tabmove<cr>", opts)
--- open terminal 
+-- open terminal
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<cr>", opts)
 -- buffer switcher
 vim.keymap.set("n", "bh", ":bp<cr>", opts)
@@ -120,5 +122,5 @@ vim.keymap.set("n", "<leader>p", "<cmd>Telescope project<cr>", opts)
 -- formatting --
 vim.keymap.set("n", "<leader>F", ":Format<cr>", opts)
 
--- Renaming variables 
+-- Renaming variables
 vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)

@@ -12,3 +12,5 @@ require("core.plugin-configs.indent-line")
 require("core.plugin-configs.colorizer")
 require("core.plugin-configs.toggleterm")
 require("core.plugin-configs.nvim-surround")
+
+

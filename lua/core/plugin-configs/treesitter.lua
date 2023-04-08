@@ -16,11 +16,11 @@ configs.setup {
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     colors = {
-      "#BF616A",
-      "#D08770",
-      "#EBCB8B",
-      "#A3BE8C",
-      "#B48EAD"
+      "#C83F49",
+      "#F07F5E",
+      "#F8De7E",
+      "#93c572",
+      "#B768A2"
     } -- table of hex strings
     -- termcolors = {} -- table of colour name strings
   },

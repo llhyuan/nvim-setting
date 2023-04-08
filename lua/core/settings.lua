@@ -9,7 +9,7 @@ vim.opt.updatetime = 50
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 if vim.fn.has("termguicolors") == 1 then
-vim.opt.termguicolors = true
+  vim.opt.termguicolors = true
 end
 
 -- search
@@ -33,8 +33,8 @@ vim.opt.smartindent = true
 
 vim.opt.list = true
 vim.opt.listchars = {
-	tab = "▸ ",
-	trail = "+",
+  tab = "▸ ",
+  trail = "+",
 }
 
 vim.opt.mouse = "a"
@@ -63,8 +63,12 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 
 vim.opt.shortmess:append({ c = true })
-vim.opt.whichwrap:append({ ["<"] = true, [">"] = true, [","] = true, h = true, l = true })
+vim.opt.whichwrap:append({ ["<"] = true,[">"] = true,[","] = true, h = true, l = true })
 vim.cmd([[set iskeyword+=-]])
+
+--treesitter folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- presistent undo
 vim.bo.undofile = true
@@ -75,8 +79,8 @@ vim.opt.spelllang = { "en_us" }
 
 -- Disables automatic commenting on newline
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "*" },
-	command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
+  pattern = { "*" },
+  command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
 })
 
 -- Highlight yanked text
@@ -84,12 +88,14 @@ local au = vim.api.nvim_create_autocmd
 local ag = vim.api.nvim_create_augroup
 ---Highlight the texts when you yanked
 au("TextYankPost", {
-	group = ag("yank_highlight", {}),
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 300 })
-	end,
+  group = ag("yank_highlight", {}),
+  pattern = "*",
+  callback = function()
+    vim.highlight.on_yank({ higroup = "IncSearch", timeout = 300 })
+  end,
 })
+
+
 
 -- Automatically deletes all trailing whitespace and newlines at end of file on save
 -- vim.api.nvim_create_autocmd(

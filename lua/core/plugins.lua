@@ -204,4 +204,15 @@ return require("packer").startup(function(use)
 
   -- with Tmux
   -- use({ "christoomey/vim-tmux-navigator" })
+
+  ------------------------------------------- Golang ----------------------------
+
+  use({ "fatih/vim-go" })
+
+
+
+
+
+
 end)
+

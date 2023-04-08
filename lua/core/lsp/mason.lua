@@ -28,12 +28,14 @@ local servers = {
   "cssls",
   "cssmodules_ls",
   "eslint",
+  "gopls",
   "html",
   "tsserver",
   "marksman",
   "sqlls",
   "svelte",
-  "emmet_ls"
+  "emmet_ls",
+  "stylelint_lsp"
 }
 
 local settings = {
