@@ -192,6 +192,10 @@ return require("packer").startup(function(use)
 
   use({ "tpope/vim-obsession" })
 
+  -------------- quick motion --------------------
+
+  use { 'ggandor/leap.nvim', requires= 'tpope/vim-repeat' }
+
 
   ---------------------------------------dashboard----------------------------
 
