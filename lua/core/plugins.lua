@@ -142,13 +142,13 @@ return require("packer").startup(function(use)
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
   })
 
-  -- languages
-  -- use({ "mfussenegger/nvim-dap" })
-  -- use({ "theHamsta/nvim-dap-virtual-text" })
-  -- use({ "rcarriga/nvim-dap-ui" })
+  -- debugger
+   use({ "mfussenegger/nvim-dap" })
+   use({ "theHamsta/nvim-dap-virtual-text" })
+   use({ "rcarriga/nvim-dap-ui" })
 
   -- use({ "olexsmir/gopher.nvim" })
-  -- use({ "leoluz/nvim-dap-go" })
+   use({ "leoluz/nvim-dap-go" })
 
   -- Git
   -- use({ "lewis6991/gitsigns.nvim" })
