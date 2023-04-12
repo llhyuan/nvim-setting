@@ -146,6 +146,8 @@ return require("packer").startup(function(use)
    use({ "mfussenegger/nvim-dap" })
    use({ "theHamsta/nvim-dap-virtual-text" })
    use({ "rcarriga/nvim-dap-ui" })
+   use({ "folke/neodev.nvim" }) -- required by dap-ui
+   use({ "ChristianChiarulli/neovim-codicons" }) -- dap-ui icons
 
   -- use({ "olexsmir/gopher.nvim" })
    use({ "leoluz/nvim-dap-go" })
