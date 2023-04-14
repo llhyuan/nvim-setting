@@ -24,7 +24,7 @@ require("neodev").setup({
 })
 
 -- keymaps
-vim.keymap.set('n', '<leader>t', function() require('dap-go').debug_test() end)
+vim.keymap.set('n', '<leader>T', function() require('dap-go').debug_test() end)
 vim.keymap.set('n', '<leader>dk', function() require('dap').continue() end)
 vim.keymap.set('n', '<leader>dl', function() require('dap').run_last() end)
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)

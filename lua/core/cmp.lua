@@ -8,7 +8,6 @@ if not snip_status_ok then
   return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -54,7 +53,7 @@ cmp.setup {
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
-    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+    ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
@@ -113,10 +112,10 @@ cmp.setup {
   sources = {
     { name = "luasnip" },
     { name = "nvim_lsp" },
-    { name = "buffer", max_item_count = 6 },
-    { name = "nvim_lsp_signature_hel" },
-    { name = "path", max_item_count = 6 },
+    { name = "path", max_item_count = 4 },
+    { name = "buffer", max_item_count = 4, keyword_length = 5 },
     { name = "nvim_lua" },
+    { name = "nvim_lsp_signature_hel" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -126,7 +125,7 @@ cmp.setup {
     documentation = cmp.config.window.borderedkk,
   },
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
   },
 }

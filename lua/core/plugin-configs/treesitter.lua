@@ -16,22 +16,33 @@ configs.setup {
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     colors = {
-      "#C83F49",
+      "#C83F39",
       "#F07F5E",
       "#F8De7E",
       "#93c572",
       "#B768A2"
-    } -- table of hex strings
+    }, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
+    strategy = require('ts-rainbow').strategy.global,
   },
   playground = {
     enable = true
   },
   context_commentstring = {
     enable = true,
-    -- enable_autocmd = false,
+    enable_autocmd = false,
     config = {
-      lua = { __default = '-- %s', __multiline = '--[[ %s --]]' }
+      -- These are the default settings for comment string patterns.
+      -- lua = { __default = '-- %s', __multiline = '--[[ %s --]]' },
+      -- css = '// %s',
+      -- javascript = {
+      --   __default = '// %s',
+      --   jsx_element = '{/* %s */}',
+      --   jsx_fragment = '{/* %s */}',
+      --   jsx_attribute = '// %s',
+      --   comment = '// %s'
+      -- },
+      -- typescript = { __default = '// %s', __multiline = '/* %s */' },
     }
   },
   autotag = {

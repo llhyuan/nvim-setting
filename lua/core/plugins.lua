@@ -88,7 +88,7 @@ return require("packer").startup(function(use)
     requires = "nvim-treesitter/nvim-treesitter",
   })
 
-  use({ "p00f/nvim-ts-rainbow" })
+  use({ "HiPhish/nvim-ts-rainbow2" })
   use({ "jiangmiao/auto-pairs" })
   use({ "windwp/nvim-ts-autotag" })
   use({ "MunifTanjim/eslint.nvim" })
