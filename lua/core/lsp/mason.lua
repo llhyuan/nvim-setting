@@ -35,7 +35,8 @@ local servers = {
   "sqlls",
   "svelte",
   "emmet_ls",
-  "stylelint_lsp"
+  "stylelint_lsp",
+  "rust_analyzer",
 }
 
 local settings = {
@@ -123,3 +124,4 @@ server = vim.split(server, "@")[1]
 
 	lspconfig[server].setup(opts)
 end
+

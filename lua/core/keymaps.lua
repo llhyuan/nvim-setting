@@ -53,7 +53,7 @@ vim.keymap.set("v", ">", ">gv", opts)
 -- Move text up and down
 vim.keymap.set("n", "∆", ":m .+1<CR>==", opts) -- ctrl+j to move selected text down
 vim.keymap.set("n", "˚", ":m .-2<CR>==", opts) -- ctrl+k to move selected text up
-vim.keymap.set("v", "∆", ":m '>+1<CR>gv=gv", opts) -- move selected text down 
+vim.keymap.set("v", "∆", ":m '>+1<CR>gv=gv", opts) -- move selected text down
 vim.keymap.set("v", "˚", ":m '<-2<CR>gv=gv", opts) -- move selected text up
 
 -- replace the highlighted text with content from clip board.
@@ -65,13 +65,13 @@ vim.keymap.set("v", "p", '"_dP', opts)
 vim.keymap.set("x", "<leader>p", '\"_dp', opts) -- paste without replacing the content in current register.
 
 -- split screen
-vim.keymap.set("n", "sk", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", opts)
-vim.keymap.set("n", "sj", ":set splitbelow<CR>:split<CR>", opts)
-vim.keymap.set("n", "sh", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", opts)
-vim.keymap.set("n", "sl", ":set splitright<CR>:vsplit<CR>", opts)
+vim.keymap.set("n", "<leader><leader>k", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", opts)
+vim.keymap.set("n", "<leader><leader>j", ":set splitbelow<CR>:split<CR>", opts)
+vim.keymap.set("n", "<leader><leader>h", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", opts)
+vim.keymap.set("n", "<leader><leader>l", ":set splitright<CR>:vsplit<CR>", opts)
 -- set split screen preference
-vim.keymap.set("n", "sv", "<C-w>t<C-w>H", opts)
-vim.keymap.set("n", "sh", "<C-w>t<C-w>K", opts)
+--vim.keymap.set("n", "sv", "<C-w>t<C-w>H", opts)
+--vim.keymap.set("n", "sh", "<C-w>t<C-w>K", opts)
 
 -- cursor jumper between screen
 vim.keymap.set("n", "<leader>l", "<c-w>l", opts)
@@ -132,4 +132,20 @@ vim.keymap.set("n", "<leader>F", ":Format<cr>", opts)
 -- Renaming variables
 vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 
+-- keymaps for lsp
+vim.keymap.set("n", "<leader>dc", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+vim.keymap.set("n", "<leader>df", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+--vim.keymap.set( "n", "<leader>td", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+vim.keymap.set("n", "<leader>ov", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+vim.keymap.set("n", "<leader>ip", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+vim.keymap.set("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+vim.keymap.set("n", "<leader>rf", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
+-- ctrl + t, to jump back through the def stack. --
+
+vim.keymap.set("n", "<leader>dg", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+vim.keymap.set("n", "<leader>dk", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+vim.keymap.set("n", "<leader>dj", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+vim.keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)

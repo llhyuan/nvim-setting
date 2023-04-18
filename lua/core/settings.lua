@@ -2,6 +2,7 @@
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
 vim.cmd("nohlsearch")
+vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format()' ]]
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.shiftround = true
