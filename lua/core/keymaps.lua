@@ -118,7 +118,7 @@ vim.keymap.set("n", "zk", ":lprevious<cr>", opts)
 vim.keymap.set("n", "zc", ":lclose<cr>", opts)
 
 -- telescope --
-vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+vim.keymap.set("n", "<leader>F", "<cmd>Telescope find_files<cr>", opts)
 --vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 
 vim.keymap.set("n", "<leader>G", "<cmd>Telescope live_grep<cr>", opts)
@@ -127,7 +127,7 @@ vim.keymap.set("n", "<leader>m", "<cmd>Telescope media_files<cr>", opts)
 vim.keymap.set("n", "<leader>p", "<cmd>Telescope project<cr>", opts)
 
 -- formatting --
-vim.keymap.set("n", "<leader>F", ":Format<cr>", opts)
+vim.keymap.set("n", "<leader>f", ":Format<cr>", opts)
 
 -- Renaming variables
 vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)

@@ -12,7 +12,7 @@ bufferline.setup({
     right_trunc_marker = "",
     max_name_length = 14,
     max_prefix_length = 13,
-    tab_size = 20,
+    tab_size = 15,
     show_buffer_icons = true,
     show_tab_indicators = true,
     --diagnostics = "coc",
