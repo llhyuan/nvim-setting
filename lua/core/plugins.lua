@@ -219,5 +219,8 @@ return require("packer").startup(function(use)
 
   ------------------------------------- Rust --------------------------------------
   use({"simrat39/rust-tools.nvim"})
+
+  use({"dstein64/vim-startuptime"})
 end)
+
 
